@@ -13,6 +13,7 @@ namespace AutoKeyIn
     {
         static void Main(string[] args)
         {
+            
             string windowName = Properties.Settings.Default.WindowName;
             int interval = Properties.Settings.Default.ClickInterval;
             string key = Properties.Settings.Default.KeyinKey;
@@ -47,7 +48,7 @@ namespace AutoKeyIn
             while (!ctx.IsCancellationRequested)
             {
                 Thread.Sleep(interval*1000);
-                SendKeys.Send(key);
+                SendKeys.SendWait("R");
             }
             
         }
